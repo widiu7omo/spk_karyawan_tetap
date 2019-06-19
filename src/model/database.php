@@ -9,8 +9,8 @@ class Database {
         $this->connect();
     }
     public function connect(){
-        $this->connection = mysqli_connect('127.0.0.1','root','','spk_karyawan');
-//	    $this->connection = mysqli_connect('64.62.211.134','widiu7_simfak','123123','widiu7_simfak');
+//        $this->connection = mysqli_connect('127.0.0.1','root','','spk_karyawan');
+	    $this->connection = mysqli_connect('64.62.211.134','widiu7_spk_karyawan_tetap','123123','widiu7_simfak');
 
 	    if(mysqli_connect_error()){
             die("Database failed to connect ".mysqli_connect_error().mysqli_connect_errno());
