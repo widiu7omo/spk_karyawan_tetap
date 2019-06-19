@@ -1,56 +1,30 @@
 <?php
-
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 require_once 'database.php';
 
-function add_spk($post){
+function show_hasil_akhir(){
 	$db = new Database();
-	$q = "INSERT INTO kriteria(nama_kriteria, bobot,bobotpecahan) VALUES ('$post[nama]','$post[bobot]','$post[bobotpecahan]')";
-	if($db->query($q)){
-		header('Location: ../kriteria-list.php');
-	}
-}
-function edit_spk($post){
-	$db = new Database();
-	$q = "UPDATE kriteria SET nama_kriteria='$post[nama]',bobot='$post[bobot]',bobotpecahan='$post[bobotpecahan]' WHERE id = '$post[id]'";
-	if($db->query($q)){
-		header('Location: ../kriteria-list.php');
-	}
-}
-function delete_spk($id){
-	$db = new Database();
-	$q = "DELETE FROM kriteria WHERE id='$id'";
-	if($db->query($q)){
-		header('Location: ../kriteria-list.php');
-	}
-}
-function show_spk($id = null){
-	$db = new Database();
-	$q = "SELECT * FROM kriteria";
-	if($id != null){
-		$q .= " WHERE id = '$id'";
-	}
+	$q = "SELECT hasil_akhir.*,nama_karyawan FROM hasil_akhir LEFT OUTER JOIN karyawan ON hasil_akhir.karyawan_id = karyawan.id ";
 	if($db->query($q)){
 		return $db->fetch();
 	}
-
 }
-if(isset($_GET['f'])){
-	switch ($_GET['f']){
-		case 'delete':
-			delete_spk( $_GET['id']);
-			break;
-		default:return;
+function truncate_all_spk(){
+	$db = new Database();
+	$q = "TRUNCATE data_kriteria";
+	if($db->query($q)){
+		$_SESSION['status'] = (object) ['status'=>'success','message'=>'Data berhasil dihapus semua'];
+		header( 'Location: ../spk-list.php');
 	}
 }
 
-if(isset($_POST['button'])){
-	switch ($_POST['button']){
-		case 'simpan':
-			add_spk($_POST);
+if(isset($_GET['f'])){
+	switch ($_GET['f']){
+		case 'truncate':
+			truncate_all_spk();
 			break;
-		case 'edit':
-			edit_spk( $_POST);
-			break;
-		default:echo 'No route available';
+		default:return;
 	}
 }

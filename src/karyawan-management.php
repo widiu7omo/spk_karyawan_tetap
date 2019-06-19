@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include './partials/head.php';
+include 'router/index.php';
 include 'model/karyawan.php';
 if(isset($_GET['id'])){
 	$karyawan = show($_GET['id']);

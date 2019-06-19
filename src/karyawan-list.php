@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include './partials/head.php';
+include 'router/index.php';
 include 'model/karyawan.php';
 $karys = show_karyawan();
 ?>

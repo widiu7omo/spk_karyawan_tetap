@@ -12,7 +12,7 @@
     <ul class="navigation-menu">
         <li class="nav-category-divider">MAIN</li>
         <li>
-            <a href="/">
+            <a href="dashboard.php">
                 <span class="link-title">Dashboard</span>
                 <i class="mdi mdi-gauge link-icon"></i>
             </a>
