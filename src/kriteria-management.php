@@ -2,7 +2,7 @@
 include 'router/index.php';
 include 'model/kriteria.php';
 if ( isset( $_GET['id'] ) ) {
-	$kriteria = show( $_GET['id'] );
+	$kriteria = show_kriteria( $_GET['id'] );
 }
 ?>
 <body class="header-fixed">

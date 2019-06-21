@@ -2,7 +2,7 @@
 include 'router/index.php';
 include 'model/karyawan.php';
 if(isset($_GET['id'])){
-	$karyawan = show($_GET['id']);
+	$karyawan = show_karyawan($_GET['id']);
 }
 ?>
 <body class="header-fixed">
@@ -39,7 +39,7 @@ if(isset($_GET['id'])){
                                                            class="form-control"
                                                            id="inputType1"
                                                            name="nama"
-                                                           value="<?php echo isset($karyawan[0]->nama)?$karyawan[0]->nama:null?>">
+                                                           value="<?php echo isset($karyawan[0]->nama_karyawan)?$karyawan[0]->nama_karyawan:null?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row showcase_row_area">
