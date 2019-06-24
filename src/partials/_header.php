@@ -5,7 +5,7 @@
       <img class="logo-mini" src="http://uxcandy.co/demo/label/preview/assets/images/logo_mini.svg" alt="">
     </a>
   </div>
-  <div class="t-header-content-wrapper">
+  <div class="t-header-content-wrapper shadow-sm">
     <div class="t-header-content">
       <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
         <i class="mdi mdi-menu"></i>

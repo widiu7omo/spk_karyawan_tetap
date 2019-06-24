@@ -16,7 +16,8 @@
 	<link rel="stylesheet" href="../../assets/css/shared/style.css">
 	<!-- endinject -->
 	<!-- Layout style -->
-	<link rel="stylesheet" href="../../assets/css/demo_1/style.css">
+    <link rel="stylesheet" href="../../assets/css/demo_1/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 	<!-- Layout style -->
 	<link rel="shortcut icon" href="../../asssets/images/favicon.ico"/>
 </head>

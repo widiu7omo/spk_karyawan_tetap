@@ -5,7 +5,7 @@
                  alt="profile image">
         </div>
         <div class="info-wrapper">
-            <p class="user-name">Admin</p>
+            <p class="user-name"><?php echo $_SESSION['name'] ?></p>
 <!--            <h6 class="display-income">$3,400,00</h6>-->
         </div>
     </div>
