@@ -41,7 +41,8 @@ function show_karyawan($id = null,$join = [],$where =[]){
 }
 function set_karyawan_tetap(){
 	$db = new Database();
-	$q = "update karyawan inner join hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0 order by hasil_akhir.total desc limit 5";
+	$q = "update karyawan inner join (select * from hasil_akhir order by total desc limit 5) hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0
+";
 	if($db->query($q)){
 		$q = "TRUNCATE hasil_akhir";
 		$db->query($q);
