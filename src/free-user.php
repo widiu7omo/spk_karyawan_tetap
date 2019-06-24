@@ -12,45 +12,63 @@ usort( $hasil_akhirs, "compare_score" );
 <body class="header-fixed sidebar-minimized">
 <?php include './partials/_header-free.php' ?>
 <!-- partial -->
-<div class="page-body"><!-- partial:../../partials/_sidebar.html -->
+<div class="page-body">
     <div class="sidebar"></div>
     <div class="page-content-wrapper">
         <div class="page-content-wrapper-inner">
-            <div class="viewport-header">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb has-arrow">
-                        <li class="breadcrumb-item"><a href="#"><h3>Pengumuman Penerimaan Karyawan Tetap</h3></a></li>
-                    </ol>
-                </nav>
-            </div>
+            <h2 class="mb-5 font-weight-light text-center">Pengumuman Penerimaan Karyawan Tetap</h2>
             <div class="content-viewport">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="card shadow-sm">
-                            <div class="card-header bg-info">
-                                <h5 class="text-white">Berikut daftar peringkat karyawan</h5>
-                                <small class="text-white-50">peringkat lebih tinggi memiliki peluang lebih besar menjadi
-                                    karyawan tetap
-                                </small>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-									<?php foreach ( $hasil_akhirs as $no => $hasil ): ?>
-                                        <div class="col-md-4 col-sm-12 col-lg-3">
-                                            <div class="card shadow-sm mx-auto pb-4 my-2">
-                                                <div class="card-header"><h4 class="text-info">Peringkat ke-<?php echo $no + 1 ?></h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex flex-column align-content-end">
-                                                        <div class="bg-warning float-right" style="position: absolute;right:3px;bottom:3px;border-radius: 50%;height: 60px;width: 60px;">
-                                                            <p class="h4 text-white mt-3 ml-2"><?php echo $hasil->total ?></p>
-                                                        </div>
-                                                        <h5 class="mb-2"><?php echo $hasil->nama_karyawan ?></h5>
-                                                    </div>
-                                                </div>
+                        <div class="grid shadow-lg">
+                            <div class="grid-body">
+                                <div class="table-responsive">
+                                    <div id="complex-header-table_wrapper"
+                                         class="dataTables_wrapper dt-bootstrap4 no-footer ">
+                                        <div class="row mb-3">
+                                            <div class="col-sm-12 col-md-5">
+                                                <button class="btn btn-sm btn-primary"></button>
+                                                <span>&nbsp;10 Peringkat besar</span>
                                             </div>
                                         </div>
-									<?php endforeach; ?>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table
+                                                       class="table table-striped table-bordered data-table dataTable no-footer hover row-border"
+                                                       role="grid" aria-describedby="complex-header-table_info">
+                                                    <thead>
+                                                    <tr class="header-grouping-label" role="row">
+                                                        <th style="font-size: 150%" rowspan="1" colspan="2">Info
+                                                            Karyawan
+                                                        </th>
+                                                        <th style="font-size: 150%" colspan="1" rowspan="1">Hasil
+                                                            Perhitungan Karyawan
+                                                        </th>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <th style="font-size: 150%" width="2%">#</th>
+                                                        <th style="font-size: 150%"
+                                                            rowspan="1" colspan="1"
+                                                        >Nama Karyawan
+                                                        </th>
+                                                        <th style="font-size: 150%"
+                                                            rowspan="1" colspan="1" width="25%">Hasil Perhitungan
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+													<?php foreach ( $hasil_akhirs as $no => $hasil ): ?>
+                                                        <tr role="row" class="<?php echo $no>9?null:'bg-primary'?>">
+                                                            <td style="font-size: 150%"><?php echo $no + 1 ?></td>
+                                                            <td style="font-size: 150%"><?php echo $hasil->nama_karyawan ?></td>
+                                                            <td style="font-size: 150%;font-weight: bold"><?php echo $hasil->total ?></td>
+                                                        </tr>
+													<?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

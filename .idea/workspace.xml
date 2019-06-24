@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0886ba46-0ab7-41da-aff0-286e9e2fa7fb" name="Default Changelist" comment="" />
+    <list default="true" id="0886ba46-0ab7-41da-aff0-286e9e2fa7fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/free-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/free-user.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -46,21 +55,41 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/user.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/database.php">
+        <entry file="file://$PROJECT_DIR$/src/free-user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="11" column="83" lean-forward="true" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+            <state relative-caret-position="293">
+              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+              <folding>
+                <element signature="e#1364#1370#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,11 +106,14 @@
       <find>kriteria</find>
       <find>board-ca</find>
       <find>datatable</find>
+      <find>200%</find>
+      <find>sort</find>
     </findStrings>
     <replaceStrings>
       <replace>krite</replace>
       <replace>data-kriteria</replace>
       <replace>data_kriteria</replace>
+      <replace>150%</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -96,7 +128,6 @@
         <option value="$PROJECT_DIR$/src/karyawan.php" />
         <option value="$PROJECT_DIR$/assets/vendors/select2/select2.full.min.js" />
         <option value="$PROJECT_DIR$/assets/vendors/select2/select2.min.css" />
-        <option value="$PROJECT_DIR$/assets/js/script.js" />
         <option value="$PROJECT_DIR$/src/partials/_modal.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/partials/_modal_delete_all.php" />
@@ -122,16 +153,17 @@
         <option value="$PROJECT_DIR$/src/dashboard.php" />
         <option value="$PROJECT_DIR$/src/partials/_sidebar.php" />
         <option value="$PROJECT_DIR$/src/partials/_header-free.php" />
-        <option value="$PROJECT_DIR$/src/free-user.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/model/database.php" />
+        <option value="$PROJECT_DIR$/assets/js/script.js" />
+        <option value="$PROJECT_DIR$/src/free-user.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1366" />
-    <option name="height" value="698" />
+    <option name="height" value="700" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -141,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,10 +180,27 @@
               <item name="SPK_karyawan_tetap" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPK_karyawan_tetap" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SPK_karyawan_tetap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SPK_karyawan_tetap" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SPK_karyawan_tetap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SPK_karyawan_tetap" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SPK_karyawan_tetap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SPK_karyawan_tetap" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,16 +248,20 @@
       <workItem from="1560810419515" duration="24060000" />
       <workItem from="1560862590492" duration="373000" />
       <workItem from="1560928873049" duration="21552000" />
+      <workItem from="1561252835539" duration="918000" />
+      <workItem from="1561296580644" duration="349000" />
+      <workItem from="1561358168362" duration="3132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45985000" />
+    <option name="totallyTimeSpent" value="50384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="698" extended-state="6" />
+    <frame x="0" y="23" width="1366" height="699" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2659091" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -259,18 +311,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/vendors/summernote/dist/lang/summernote-uk-UA.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/vendors/summernote/dist/lang/summernote-uz-UZ.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/vendors/summernote/dist/lang/summernote-vi-VN.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -332,9 +372,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8451fc7a-a585-4c81-8cb9-9c443cafd3b9/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin/spk.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugin/spk.php" />
     <entry file="file://$PROJECT_DIR$/src/partials/_modal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -342,13 +380,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/partials/_modal_delete_all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/partials/_modal_delete_all.php" />
     <entry file="file://$PROJECT_DIR$/src/model/data-kriteria.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -471,16 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/free-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="45" column="88" selection-start-line="45" selection-start-column="88" selection-end-line="45" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/partials/_sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -519,14 +541,50 @@
     <entry file="file://$PROJECT_DIR$/src/model/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="11" column="83" lean-forward="true" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/partials/_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="755" column="62" selection-start-line="755" selection-start-column="62" selection-end-line="755" selection-end-column="62" />
+          <folding>
+            <element signature="e#157#163#0" expanded="true" />
+            <element signature="e#160#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/free-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+          <folding>
+            <element signature="e#1364#1370#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
