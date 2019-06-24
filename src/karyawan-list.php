@@ -1,7 +1,17 @@
 <?php include './partials/head.php';
 include 'router/index.php';
 include 'model/karyawan.php';
-$karys = show_karyawan();
+if(isset($_GET['status'])){
+    $status = 0;
+    if($_GET['status'] == 'tetap'){
+        $status = 1;
+    }
+    $karys = show_karyawan(null,[],['status',$status]);
+}
+else{
+	$karys = show_karyawan();
+}
+
 ?>
 <body class="header-fixed">
 <?php include './partials/_header.php' ?>
@@ -19,10 +29,16 @@ $karys = show_karyawan();
                             <p class="text-gray">Daftar Calon Karyawan Tetap</p>
                         </div>
                         <div class="float-right">
+	                        <?php if(isset($_GET['status']) && $_GET['status'] == 'calon'):?>
                             <a class="btn btn-primary btn-sm" href="karyawan-management.php?f=simpan">Tambah</a>
+	                        <?php endif;?>
                         </div>
                     </div>
                 </div>
+	            <?php if ( isset( $_SESSION['status'] ) ): ?>
+                    <div class="alert alert-success"><p><?php echo $_SESSION['status']->message ?></p></div>
+		            <?php unset( $_SESSION['status'] ) ?>
+	            <?php endif; ?>
                 <div class="row">
                     <div class="col-12 py-5">
                         <table id="sample-data-table" class="data-table table table-striped dataTable no-footer"

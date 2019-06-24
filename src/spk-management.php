@@ -64,6 +64,10 @@ $karyawans = get_data("SELECT karyawan.id,nama_karyawan FROM karyawan LEFT OUTER
                                                                    value="<?php echo isset( $data_kriterias[$key]->kriteria_id )&&$data_kriterias[$key]->kriteria_id == $kriteria->id ? $data_kriterias[$key]->kriteria_id : $kriteria->id ?>">
 
                                                             <input type="number"
+                                                                   min="0"
+                                                                   max="10"
+                                                                   maxlength="2"
+                                                                   required
                                                                    class="form-control"
                                                                    id="inputType1"
                                                                    name="nilai[]"

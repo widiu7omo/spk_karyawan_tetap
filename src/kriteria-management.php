@@ -48,6 +48,9 @@ if ( isset( $_GET['id'] ) ) {
                                                         <label for="inputType12">Bobot Kriteria</label></div>
                                                     <div class="col-md-9 showcase_content_area">
                                                         <input type="number"
+                                                               required
+                                                               maxlength="2"
+                                                               max="100"
                                                                class="form-control"
                                                                name="bobot"
                                                                id="inputType2"

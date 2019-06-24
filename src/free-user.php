@@ -41,7 +41,7 @@ usort( $hasil_akhirs, "compare_score" );
                                                         <th style="font-size: 150%" rowspan="1" colspan="2">Info
                                                             Karyawan
                                                         </th>
-                                                        <th style="font-size: 150%" colspan="1" rowspan="1">Hasil
+                                                        <th style="font-size: 150%" colspan="2" rowspan="1">Hasil
                                                             Perhitungan Karyawan
                                                         </th>
                                                     </tr>
@@ -54,6 +54,9 @@ usort( $hasil_akhirs, "compare_score" );
                                                         <th style="font-size: 150%"
                                                             rowspan="1" colspan="1" width="25%">Hasil Perhitungan
                                                         </th>
+                                                        <th style="font-size: 150%"
+                                                            rowspan="1" colspan="1" width="25%">Status
+                                                        </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -61,7 +64,8 @@ usort( $hasil_akhirs, "compare_score" );
                                                         <tr role="row" class="<?php echo $no>9?null:'bg-primary'?>">
                                                             <td style="font-size: 150%"><?php echo $no + 1 ?></td>
                                                             <td style="font-size: 150%"><?php echo $hasil->nama_karyawan ?></td>
-                                                            <td style="font-size: 150%;font-weight: bold"><?php echo $hasil->total ?></td>
+                                                            <td style="font-size: 150%;<?php  echo $no<5?'font-weight: bold':null?>"><?php echo $hasil->total ?></td>
+                                                            <td style="font-size: 120%;"><?php echo $no<5?'Calon Karyawan Tetap':'Belum mencukupi'?></td>
                                                         </tr>
 													<?php endforeach; ?>
                                                     </tbody>

@@ -24,7 +24,10 @@
             </a>
             <ul class="collapse navigation-submenu" id="sample-pages">
                 <li>
-                    <a href="karyawan-list.php" >Karyawan</a>
+                    <a href="karyawan-list.php?status=tetap" >Karyawan Tetap</a>
+                </li>
+                <li>
+                    <a href="karyawan-list.php?status=calon" >Calon Karyawan</a>
                 </li>
                 <li>
                     <a href="kriteria-list.php" >Kriteria</a>

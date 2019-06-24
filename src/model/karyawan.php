@@ -8,33 +8,46 @@ function add_karyawan($post){
 	$db = new Database();
 	$q = "INSERT INTO karyawan(nama_karyawan, umur, ttl) VALUES ('$post[nama]','$post[umur]','$post[ttl]')";
 	if($db->query($q)){
-		header('Location: ../karyawan-list.php');
+		header('Location: ../karyawan-list.php?status=calon');
 	}
 }
 function edit_karyawan($post){
 	$db = new Database();
 	$q = "UPDATE karyawan SET nama_karyawan='$post[nama]',umur='$post[umur]',ttl='$post[ttl]' WHERE id = '$post[id]'";
 	if($db->query($q)){
-		header('Location: ../karyawan-list.php');
+		header('Location: ../karyawan-list.php?status=calon');
 	}
 }
 function delete_karyawan($id){
 	$db = new Database();
 	$q = "DELETE FROM karyawan WHERE id='$id'";
 	if($db->query($q)){
-		header('Location: ../karyawan-list.php');
+		header('Location: ../karyawan-list.php?status=calon');
 	}
 }
-function show_karyawan($id = null,$join = []){
+function show_karyawan($id = null,$join = [],$where =[]){
 	$db = new Database();
 	$q = "SELECT * FROM karyawan";
 	if($id != null){
 		$q .= " WHERE id = '$id'";
 	}
+	if(count($where) > 0){
+		$q .= " WHERE $where[0] = $where[1]";
+	}
 	if($db->query($q)){
 		return $db->fetch();
 	}
 
+}
+function set_karyawan_tetap(){
+	$db = new Database();
+	$q = "update karyawan inner join hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0 order by hasil_akhir.total desc limit 5";
+	if($db->query($q)){
+		$q = "TRUNCATE hasil_akhir";
+		$db->query($q);
+		$_SESSION['status'] = (object) ['status'=>'success','message'=>'5 Karyawan berhasil dijadikan karyawan tetap'];
+		header('Location: ../karyawan-list.php?status=tetap');
+	}
 }
 if(isset($_GET['f'])){
 	switch ($_GET['f']){
@@ -52,6 +65,9 @@ if(isset($_POST['button'])){
 			break;
 		case 'edit':
 			edit_karyawan( $_POST);
+			break;
+		case 'set':
+			set_karyawan_tetap();
 			break;
 		default:echo 'No route available';
 	}
