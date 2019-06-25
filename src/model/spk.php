@@ -11,6 +11,13 @@ function show_hasil_akhir(){
 		return $db->fetch();
 	}
 }
+function show_hasil_akhir_free_user(){
+	$db = new Database();
+	$q = "SELECT * FROM karyawan ORDER BY status DESC";
+	if($db->query($q)){
+		return $db->fetch();
+	}
+}
 function truncate_all_spk(){
 	$db = new Database();
 	$q = "TRUNCATE data_kriteria";

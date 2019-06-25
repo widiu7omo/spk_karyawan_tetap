@@ -41,10 +41,12 @@ function show_karyawan($id = null,$join = [],$where =[]){
 }
 function set_karyawan_tetap(){
 	$db = new Database();
-	$q = "update karyawan inner join (select * from hasil_akhir order by total desc limit 5) hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0
-";
+
+	$q = "update karyawan inner join (select * from hasil_akhir order by total desc limit 5) hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0";
 	if($db->query($q)){
 		$q = "TRUNCATE hasil_akhir";
+		$db->query($q);
+		$q = "TRUNCATE data_kriteria";
 		$db->query($q);
 		$_SESSION['status'] = (object) ['status'=>'success','message'=>'5 Karyawan berhasil dijadikan karyawan tetap'];
 		header('Location: ../karyawan-list.php?status=tetap');

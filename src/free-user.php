@@ -1,13 +1,13 @@
 <?php include './partials/head.php';
 require_once './model/spk.php';
-$hasil_akhirs = show_hasil_akhir();
+$hasil_akhirs = show_hasil_akhir_free_user();
 
-//rankingin
-function compare_score( $a, $b ) {
-	return strcmp( $b->total, $a->total );
-}
-
-usort( $hasil_akhirs, "compare_score" );
+////rankingin
+//function compare_score( $a, $b ) {
+//	return strcmp( $b->total, $a->total );
+//}
+//
+//usort( $hasil_akhirs, "compare_score" );
 ?>
 <body class="header-fixed sidebar-minimized">
 <?php include './partials/_header-free.php' ?>
@@ -27,8 +27,6 @@ usort( $hasil_akhirs, "compare_score" );
                                          class="dataTables_wrapper dt-bootstrap4 no-footer ">
                                         <div class="row mb-3">
                                             <div class="col-sm-12 col-md-5">
-                                                <button class="btn btn-sm btn-primary"></button>
-                                                <span>&nbsp;10 Peringkat besar</span>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -41,8 +39,8 @@ usort( $hasil_akhirs, "compare_score" );
                                                         <th style="font-size: 150%" rowspan="1" colspan="2">Info
                                                             Karyawan
                                                         </th>
-                                                        <th style="font-size: 150%" colspan="2" rowspan="1">Hasil
-                                                            Perhitungan Karyawan
+                                                        <th style="font-size: 150%" colspan="3" rowspan="1">Data
+                                                            Karyawan
                                                         </th>
                                                     </tr>
                                                     <tr role="row">
@@ -52,7 +50,10 @@ usort( $hasil_akhirs, "compare_score" );
                                                         >Nama Karyawan
                                                         </th>
                                                         <th style="font-size: 150%"
-                                                            rowspan="1" colspan="1" width="25%">Hasil Perhitungan
+                                                            rowspan="1" colspan="1" width="25%">Umur
+                                                        </th>
+                                                        <th style="font-size: 150%"
+                                                            rowspan="1" colspan="1" width="25%">Tanggal Lahir
                                                         </th>
                                                         <th style="font-size: 150%"
                                                             rowspan="1" colspan="1" width="25%">Status
@@ -61,11 +62,12 @@ usort( $hasil_akhirs, "compare_score" );
                                                     </thead>
                                                     <tbody>
 													<?php foreach ( $hasil_akhirs as $no => $hasil ): ?>
-                                                        <tr role="row" class="<?php echo $no>9?null:'bg-primary'?>">
+                                                        <tr role="row" class="<?php echo $hasil->status==0?null:'bg-primary'?>">
                                                             <td style="font-size: 150%"><?php echo $no + 1 ?></td>
                                                             <td style="font-size: 150%"><?php echo $hasil->nama_karyawan ?></td>
-                                                            <td style="font-size: 150%;<?php  echo $no<5?'font-weight: bold':null?>"><?php echo $hasil->total ?></td>
-                                                            <td style="font-size: 120%;"><?php echo $no<5?'Calon Karyawan Tetap':'Belum mencukupi'?></td>
+                                                            <td style="font-size: 150%;<?php  echo $no<5?'font-weight: bold':null?>"><?php echo $hasil->umur ?></td>
+                                                            <td style="font-size: 120%;"><?php echo $hasil->ttl?></td>
+                                                            <td style="font-size: 120%;"><?php echo $hasil->status==0?'Karyawan Kontrak':'Karyawan Tetap'?></td>
                                                         </tr>
 													<?php endforeach; ?>
                                                     </tbody>
