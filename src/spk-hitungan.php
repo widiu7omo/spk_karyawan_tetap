@@ -8,11 +8,11 @@ require_once './model/kriteria.php';
 require_once './model/karyawan.php';
 
 $kriterias = show_kriteria();
-$karyawans = show_karyawan(null,[],['status',0]);
+$karyawans = show_karyawan();
 
 function check_matching(){
 	$db = new Database();
-	$q = "SELECT count(*) as karyawan_left FROM karyawan LEFT OUTER JOIN data_kriteria ON karyawan.id = data_kriteria.karyawan_id WHERE karyawan.status = 0 AND data_kriteria.karyawan_id IS NULL";
+	$q = "SELECT count(*) as karyawan_left FROM calon_karyawan LEFT OUTER JOIN data_kriteria ON calon_karyawan.id = data_kriteria.karyawan_id WHERE data_kriteria.karyawan_id IS NULL";
 	if($db->query($q)){
 		$result = $db->fetch();
 		return $result[0]->karyawan_left;

@@ -63,8 +63,8 @@ $kriterias = show_kriteria();
                                                 <tr role="row">
 												<?php $data_kriterias = show_data_kriteria( $kary->id, 'karyawan_id', [
 													[
-														'karyawan',
-														'data_kriteria.karyawan_id = karyawan.id'
+														'calon_karyawan',
+														'data_kriteria.karyawan_id = calon_karyawan.id'
 													],
 													[ 'kriteria', 'data_kriteria.kriteria_id = kriteria.id' ]
 												] ); ?>

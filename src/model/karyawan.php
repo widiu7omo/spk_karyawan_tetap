@@ -48,9 +48,12 @@ function show_karyawan($id = null,$join = [],$where =[]){
 }
 function set_karyawan_tetap(){
 	$db = new Database();
-
-	$q = "update calon_karyawan inner join (select * from hasil_akhir order by total desc limit 5) hasil_akhir on karyawan.id = hasil_akhir.karyawan_id set karyawan.status = 1 where karyawan.status = 0";
+	$q = "UPDATE calon_karyawan INNER JOIN (SELECT * FROM hasil_akhir ORDER BY total DESC limit 5) hasil_akhir ON calon_karyawan.id = hasil_akhir.karyawan_id SET calon_karyawan.status = 1 WHERE calon_karyawan.status = 0";
 	if($db->query($q)){
+		$q = "INSERT INTO karyawan_tetap(nama_karyawan, umur, ttl) SELECT nama_karyawan,umur,ttl FROM calon_karyawan WHERE status = 1";
+		$db->query($q);
+		$q = "DELETE FROM calon_karyawan WHERE status = 1";
+		$db->query($q);
 		$q = "TRUNCATE hasil_akhir";
 		$db->query($q);
 		$q = "TRUNCATE data_kriteria";

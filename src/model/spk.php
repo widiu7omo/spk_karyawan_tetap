@@ -6,14 +6,14 @@ require_once 'database.php';
 
 function show_hasil_akhir(){
 	$db = new Database();
-	$q = "SELECT hasil_akhir.*,nama_karyawan FROM hasil_akhir LEFT OUTER JOIN karyawan ON hasil_akhir.karyawan_id = karyawan.id ";
+	$q = "SELECT hasil_akhir.*,nama_karyawan FROM hasil_akhir LEFT OUTER JOIN calon_karyawan ON hasil_akhir.karyawan_id = calon_karyawan.id ";
 	if($db->query($q)){
 		return $db->fetch();
 	}
 }
 function show_hasil_akhir_free_user(){
 	$db = new Database();
-	$q = "SELECT * FROM karyawan ORDER BY status DESC";
+	$q = "SELECT * FROM calon_karyawan ORDER BY status DESC";
 	if($db->query($q)){
 		return $db->fetch();
 	}

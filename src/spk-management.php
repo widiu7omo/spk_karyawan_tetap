@@ -9,7 +9,7 @@ if ( isset( $_GET['id'] ) ) {
 	$karyawan = show_karyawan($data_kriterias[0]->karyawan_id);
 }
 $kriterias = show_kriteria();
-$karyawans = get_data("SELECT karyawan.id,nama_karyawan FROM karyawan LEFT OUTER JOIN data_kriteria ON karyawan.id = data_kriteria.karyawan_id WHERE data_kriteria.karyawan_id IS NULL ORDER BY nama_karyawan");
+$karyawans = get_data("SELECT calon_karyawan.id,nama_karyawan FROM calon_karyawan LEFT OUTER JOIN data_kriteria ON calon_karyawan.id = data_kriteria.karyawan_id WHERE data_kriteria.karyawan_id IS NULL ORDER BY nama_karyawan");
 ?>
 <body class="header-fixed">
 <?php include './partials/_header.php' ?>

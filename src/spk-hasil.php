@@ -64,7 +64,7 @@ usort( $hasil_akhirs, "compare_score" );
                                                     <td class="sorting_1">Peringkat ke-<?php echo $no + 1 ?></td>
                                                     <td class="sorting_1"><?php echo $hasil_akhir->nama_karyawan ?></td>
                                                     <td class="sorting_1"><?php echo $hasil_akhir->total ?></td>
-                                                    <td><?php echo $no < 5 ? "Calon Karyawan Tetap" : "Belum Mencukupi" ?></td>
+                                                    <td><?php echo $no < 5 ? "Terpilih Karyawan Tetap" : "Belum Mencukupi" ?></td>
                                                 </tr>
 											<?php endforeach; ?>
 
