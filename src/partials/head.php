@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="../../assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
 	<link rel="stylesheet" href="../../assets/vendors/css/vendor.addons.css">
     <link rel="stylesheet" href="../../assets/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
 	<!-- endinject -->
 	<!-- vendor css for this page -->
 	<!-- End vendor css for this page -->

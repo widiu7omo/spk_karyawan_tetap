@@ -1,13 +1,6 @@
 <?php include './partials/head.php';
 require_once './model/spk.php';
 $hasil_akhirs = show_hasil_akhir_free_user();
-
-////rankingin
-//function compare_score( $a, $b ) {
-//	return strcmp( $b->total, $a->total );
-//}
-//
-//usort( $hasil_akhirs, "compare_score" );
 ?>
 <body class="header-fixed sidebar-minimized">
 <?php include './partials/_header-free.php' ?>

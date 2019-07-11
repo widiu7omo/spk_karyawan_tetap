@@ -44,23 +44,24 @@ if(isset($_GET['id'])){
                                             </div>
                                             <div class="form-group row showcase_row_area">
                                                 <div class="col-md-3 showcase_text_area">
-                                                    <label for="inputType12">Umur</label></div>
-                                                <div class="col-md-9 showcase_content_area">
-                                                    <input type="number"
-                                                           class="form-control"
-                                                           name="umur"
-                                                           id="inputType2"
-                                                           value="<?php echo isset($karyawan[0]->umur)?$karyawan[0]->umur:null?>">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row showcase_row_area">
-                                                <div class="col-md-3 showcase_text_area">
                                                     <label for="inputType12">Tanggal Lahir</label></div>
                                                 <div class="col-md-9 showcase_content_area">
                                                     <input type="date"
                                                            class="form-control"
                                                            name="ttl"
-                                                           id="inputType2"
+                                                           id="born"
+                                                           value="<?php echo isset($karyawan[0]->umur)?$karyawan[0]->umur:null?>">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row showcase_row_area">
+                                                <div class="col-md-3 showcase_text_area">
+                                                    <label for="inputType12">Umur</label></div>
+                                                <div class="col-md-9 showcase_content_area">
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           name="umur"
+                                                           readonly
+                                                           id="age"
                                                            value="<?php echo isset($karyawan[0]->umur)?$karyawan[0]->umur:null?>">
                                                 </div>
                                             </div>
@@ -87,6 +88,31 @@ if(isset($_GET['id'])){
 <!-- SCRIPT LOADING START FORM HERE /////////////-->
 <!-- plugins:js -->
 <?php include './partials/_js.php' ?>
+<script>
+    $('#born').on('change',function(){
+        console.log('change');
+        let selectedDate = $(this).val()
+        console.log(selectedDate);
+        let dateDiff = calcDate(new Date(),new Date(selectedDate));
+        console.log(dateDiff);
+    })
+    function calcDate(date1,date2) {
+        var diff = Math.floor(date1.getTime() - date2.getTime());
+        var day = 1000 * 60 * 60 * 24;
+
+        var days = Math.floor(diff/day);
+        var months = Math.floor(days/31);
+        var years = Math.floor(months/12);
+
+        var message = date2.toDateString();
+        message += " was "
+        message += days + " days "
+        message += months + " months "
+        message += years + " years ago \n"
+        $('#age').val(years);
+        return message
+    }
+</script>
 <!-- Vendor Js For This Page Ends-->
 </body>
 </html>

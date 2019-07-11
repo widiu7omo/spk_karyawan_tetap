@@ -1,8 +1,9 @@
 <?php include './partials/head.php';
 include './model/getdata.php';
-$calons       = get_data( "SELECT * FROM karyawan INNER JOIN hasil_akhir on karyawan.id = hasil_akhir.karyawan_id WHERE karyawan.status = 0 ORDER BY total desc LIMIT 5" );
-$jumlah_tetap = get_data( "SELECT COUNT(*) as tetap FROM karyawan where status = 1" );
-$jumlah_calon = get_data( "SELECT COUNT(*) as calon FROM karyawan where status = 0" );
+$calons       = get_data( "SELECT * FROM calon_karyawan INNER JOIN hasil_akhir on calon_karyawan.id = hasil_akhir.karyawan_id WHERE calon_karyawan.status = 0 ORDER BY total desc LIMIT 5" );
+$jumlah_tetap = get_data( "SELECT COUNT(*) as calon FROM calon_karyawan where status = 1" );
+$jumlah_belum = get_data( "SELECT COUNT(*) as calon FROM calon_karyawan where status = 0" );
+$jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
 ?>
 <body class="header-fixed">
 <!-- partial:partials/_header.html -->
