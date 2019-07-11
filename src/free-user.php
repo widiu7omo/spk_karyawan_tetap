@@ -38,6 +38,7 @@ $hasil_akhirs = show_hasil_akhir_free_user();
                                                     </tr>
                                                     <tr role="row">
                                                         <th style="font-size: 150%" width="2%">#</th>
+                                                        <th style="font-size: 150%" width="2%">Batch</th>
                                                         <th style="font-size: 150%"
                                                             rowspan="1" colspan="1"
                                                         >Nama Karyawan
@@ -57,6 +58,7 @@ $hasil_akhirs = show_hasil_akhir_free_user();
 													<?php foreach ( $hasil_akhirs as $no => $hasil ): ?>
                                                         <tr role="row" class="<?php echo $hasil->status==0?null:'bg-primary'?>">
                                                             <td style="font-size: 150%"><?php echo $no + 1 ?></td>
+                                                            <td style="font-size: 150%"><?php echo $hasil->batch_pengambilan ?></td>
                                                             <td style="font-size: 150%"><?php echo $hasil->nama_karyawan ?></td>
                                                             <td style="font-size: 150%;<?php  echo $no<5?'font-weight: bold':null?>"><?php echo $hasil->umur ?></td>
                                                             <td style="font-size: 120%;"><?php echo $hasil->ttl?></td>

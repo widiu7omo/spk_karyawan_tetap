@@ -13,7 +13,7 @@ function show_hasil_akhir(){
 }
 function show_hasil_akhir_free_user(){
 	$db = new Database();
-	$q = "SELECT * FROM calon_karyawan ORDER BY status DESC";
+	$q = "SELECT * FROM history_pemilihan_karyawan ORDER BY batch_pengambilan";
 	if($db->query($q)){
 		return $db->fetch();
 	}
