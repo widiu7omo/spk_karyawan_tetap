@@ -6,10 +6,21 @@ require_once 'database.php';
 
 function add_kriteria($post){
 	$db = new Database();
-	$q = "INSERT INTO kriteria(nama_kriteria, bobot,bobotpecahan) VALUES ('$post[nama]','$post[bobot]','$post[bobotpecahan]')";
-	if($db->query($q)){
-		header('Location: ../kriteria-list.php');
+	$q = "SELECT nama_kriteria FROM kriteria WHERE nama_kriteria LIKE '%$post[nama]%'";
+	if($db->query( $q)){
+		if(count( $db->fetch())==0){
+			$q = "INSERT INTO kriteria(nama_kriteria, bobot,bobotpecahan) VALUES ('$post[nama]','$post[bobot]','$post[bobotpecahan]')";
+			if($db->query($q)){
+				header('Location: ../kriteria-list.php');
+			}
+		}
+		else{
+			$_SESSION['status'] = (object) ['status'=>'danger','message'=>'Kriteria tidak boleh sama'];
+			header('Location: ../kriteria-list.php');
+		}
+
 	}
+
 }
 function edit_kriteria($post){
 	$db = new Database();

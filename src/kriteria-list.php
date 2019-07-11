@@ -23,6 +23,10 @@ $krits = show_kriteria();
 						</div>
 					</div>
 				</div>
+				<?php if ( isset( $_SESSION['status'] ) ): ?>
+                    <div class="alert alert-<?php echo $_SESSION['status']->status?>"><p><?php echo $_SESSION['status']->message ?></p></div>
+					<?php unset( $_SESSION['status'] ) ?>
+				<?php endif; ?>
 				<div class="row">
 					<div class="col-12 py-5">
 						<table id="sample-data-table" class="data-table table table-striped dataTable no-footer"

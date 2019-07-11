@@ -35,6 +35,12 @@
             </ul>
         </li>
         <li>
+            <a href="history-karyawan.php">
+                <span class="link-title">History Pengambilan Data</span>
+                <i class="mdi mdi-history link-icon"></i>
+            </a>
+        </li>
+        <li>
             <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
                 <span class="link-title">SPK</span>
                 <i class="mdi mdi-bullseye link-icon"></i>

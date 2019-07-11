@@ -32,6 +32,13 @@ function show_karyawan_tetap(){
 		return $db->fetch();
 	}
 }
+function show_history_karyawan_tetap(){
+	$db = new Database();
+	$q = "SELECT * FROM history_pemilihan_karyawan";
+	if($db->query($q)){
+		return $db->fetch();
+	}
+}
 function show_karyawan($id = null,$join = [],$where =[]){
 	$db = new Database();
 	$q = "SELECT * FROM calon_karyawan";
@@ -47,9 +54,19 @@ function show_karyawan($id = null,$join = [],$where =[]){
 
 }
 function set_karyawan_tetap(){
+	$no_batch = 1;
 	$db = new Database();
 	$q = "UPDATE calon_karyawan INNER JOIN (SELECT * FROM hasil_akhir ORDER BY total DESC limit 5) hasil_akhir ON calon_karyawan.id = hasil_akhir.karyawan_id SET calon_karyawan.status = 1 WHERE calon_karyawan.status = 0";
 	if($db->query($q)){
+		$q = "SELECT batch_pengambilan FROM history_pemilihan_karyawan ORDER BY batch_pengambilan DESC LIMIT 1 ";
+		if($db->query($q)){
+			$batch_pengambilan_terakhir = $db->fetch();
+			if(count( $batch_pengambilan_terakhir)>0){
+				$no_batch = $batch_pengambilan_terakhir[0]->batch_pengambilan+1;
+			}
+		}
+		$q = "INSERT INTO history_pemilihan_karyawan(nama_karyawan, umur, ttl,status,waktu_pemilihan,batch_pengambilan) SELECT nama_karyawan,umur,ttl,status,NOW() AS waktu_pemilihan,$no_batch AS batch_pengambilan FROM calon_karyawan";
+		$db->query($q);
 		$q = "INSERT INTO karyawan_tetap(nama_karyawan, umur, ttl) SELECT nama_karyawan,umur,ttl FROM calon_karyawan WHERE status = 1";
 		$db->query($q);
 		$q = "DELETE FROM calon_karyawan WHERE status = 1";

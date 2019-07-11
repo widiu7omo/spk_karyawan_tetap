@@ -1479,173 +1479,253 @@
     <table id="384" parent="54" name="calon_karyawan"/>
     <table id="385" parent="54" name="data_kriteria"/>
     <table id="386" parent="54" name="hasil_akhir"/>
-    <table id="387" parent="54" name="karyawan_tetap"/>
-    <table id="388" parent="54" name="kriteria"/>
-    <table id="389" parent="54" name="user"/>
-    <column id="390" parent="384" name="id">
+    <table id="387" parent="54" name="history_pemilihan_karyawan"/>
+    <table id="388" parent="54" name="karyawan_tetap"/>
+    <table id="389" parent="54" name="kriteria"/>
+    <table id="390" parent="54" name="user"/>
+    <column id="391" parent="384" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="384" name="nama_karyawan">
+    <column id="392" parent="384" name="nama_karyawan">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="384" name="umur">
+    <column id="393" parent="384" name="umur">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="393" parent="384" name="ttl">
+    <column id="394" parent="384" name="ttl">
       <Position>4</Position>
       <DataType>varchar(22)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="394" parent="384" name="status">
+    <column id="395" parent="384" name="status">
       <Position>5</Position>
       <DataType>int(1)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="395" parent="384" name="PRIMARY">
+    <key id="396" parent="384" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="396" parent="385" name="id">
+    <column id="397" parent="385" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="385" name="kriteria_id">
+    <column id="398" parent="385" name="kriteria_id">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11) unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="385" name="karyawan_id">
+    <column id="399" parent="385" name="karyawan_id">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11) unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="385" name="nilai">
+    <column id="400" parent="385" name="nilai">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="400" parent="385" name="PRIMARY">
+    <index id="401" parent="385" name="kriteria_id">
+      <ColNames>kriteria_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="402" parent="385" name="karyawan_id">
+      <ColNames>karyawan_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="403" parent="385" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="401" parent="386" name="id">
+    <foreign-key id="404" parent="385" name="data_kriteria_ibfk_1">
+      <ColNames>kriteria_id</ColNames>
+      <RefSchemaName>spk_karyawan</RefSchemaName>
+      <RefTableName>kriteria</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="405" parent="385" name="data_kriteria_ibfk_2">
+      <ColNames>karyawan_id</ColNames>
+      <RefSchemaName>spk_karyawan</RefSchemaName>
+      <RefTableName>calon_karyawan</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="406" parent="386" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="386" name="karyawan_id">
+    <column id="407" parent="386" name="karyawan_id">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11) unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="386" name="total">
+    <column id="408" parent="386" name="total">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="404" parent="386" name="PRIMARY">
+    <index id="409" parent="386" name="karyawan_id">
+      <ColNames>karyawan_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="410" parent="386" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="405" parent="387" name="id">
+    <foreign-key id="411" parent="386" name="hasil_akhir_ibfk_1">
+      <ColNames>karyawan_id</ColNames>
+      <RefSchemaName>spk_karyawan</RefSchemaName>
+      <RefTableName>calon_karyawan</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="412" parent="387" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="406" parent="387" name="nama_karyawan">
+    <column id="413" parent="387" name="nama_karyawan">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="407" parent="387" name="umur">
+    <column id="414" parent="387" name="umur">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="408" parent="387" name="ttl">
+    <column id="415" parent="387" name="ttl">
       <Position>4</Position>
       <DataType>varchar(22)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="409" parent="387" name="PRIMARY">
+    <column id="416" parent="387" name="status">
+      <Position>5</Position>
+      <DataType>int(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="417" parent="387" name="waktu_pemilihan">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="418" parent="387" name="batch_pengambilan">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="419" parent="387" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="410" parent="388" name="id">
+    <column id="420" parent="388" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="388" name="nama_kriteria">
+    <column id="421" parent="388" name="nama_karyawan">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="388" name="bobot">
+    <column id="422" parent="388" name="umur">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="388" name="bobotpecahan">
+    <column id="423" parent="388" name="ttl">
       <Position>4</Position>
-      <DataType>float|0s</DataType>
+      <DataType>varchar(22)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="414" parent="388" name="PRIMARY">
+    <key id="424" parent="388" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="415" parent="389" name="id">
+    <column id="425" parent="389" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="416" parent="389" name="username">
+    <column id="426" parent="389" name="nama_kriteria">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="427" parent="389" name="bobot">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="428" parent="389" name="bobotpecahan">
+      <Position>4</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="429" parent="389" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="430" parent="390" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="431" parent="390" name="username">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="389" name="password">
+    <column id="432" parent="390" name="password">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="389" name="nama_user">
+    <column id="433" parent="390" name="nama_user">
       <Position>4</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="419" parent="389" name="level">
+    <column id="434" parent="390" name="level">
       <Position>5</Position>
       <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="420" parent="389" name="PRIMARY">
+    <key id="435" parent="390" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
