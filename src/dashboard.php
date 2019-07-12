@@ -1,9 +1,8 @@
 <?php include './partials/head.php';
 include './model/getdata.php';
-$calons       = get_data( "SELECT * FROM calon_karyawan INNER JOIN hasil_akhir on calon_karyawan.id = hasil_akhir.karyawan_id WHERE calon_karyawan.status = 0 ORDER BY total desc LIMIT 5" );
-$jumlah_tetap = get_data( "SELECT COUNT(*) as calon FROM calon_karyawan where status = 1" );
-$jumlah_belum = get_data( "SELECT COUNT(*) as calon FROM calon_karyawan where status = 0" );
-$jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
+$calons                = get_data( "SELECT * FROM history_pemilihan_karyawan ORDER BY status desc LIMIT 5" );
+$jumlah_belum          = get_data( "SELECT COUNT(*) as calon FROM calon_karyawan" );
+$jumlah_karyawan_tetap = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
 ?>
 <body class="header-fixed">
 <!-- partial:partials/_header.html -->
@@ -30,7 +29,7 @@ $jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 equel-grid">
+                    <div class="col-md-6 equel-grid">
                         <div class="grid shadow-sm">
                             <div class="grid-body py-3">
                                 <p class="card-title ml-n1">Peringkat 5 Besar Karyawan yang akan diangkat menjadi
@@ -41,7 +40,6 @@ $jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
                                     <thead>
                                     <tr class="solid-header">
                                         <th class="pl-5">Nama</th>
-                                        <th>Hasil</th>
                                         <th>Peringkat</th>
                                     </tr>
                                     </thead>
@@ -51,10 +49,10 @@ $jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
                                             <td class="pl-5">
                                                 <small class="text-black font-weight-medium d-block"><?php echo $calon->nama_karyawan ?></small>
                                                 <span class="text-gray">
-                              <span class="status-indicator rounded-indicator small bg-primary"></span>Calon Karyawan Tetap</span>
+                              <span class="status-indicator rounded-indicator small bg-primary"></span>Terpilih Karyawan Tetap</span>
                                             </td>
                                             <td>
-                                                <small><?php echo $calon->total ?></small>
+<!--                                                <small>--><?php //echo $calon->total ?><!--</small>-->
                                             </td>
                                             <td> Ke-<?php echo $n + 1 ?> </td>
                                         </tr>
@@ -99,25 +97,14 @@ $jumlah_calon = get_data( "SELECT COUNT(*) as tetap FROM karyawan_tetap" );
 <script src="../assets/js/script.js"></script>
 <script>
 	<?php
-	$karyawans = array();
-	$totals = array();
-	if ( $calons > 0 ) {
-		$karyawans = array_map( function ( $item ) {
-			return $item->nama_karyawan;
-		}, $calons );
-
-		$totals = array_map( function ( $item ) {
-			return $item->total;
-		}, $calons );
-
-		$encodeKary  = json_encode( $karyawans );
-		$encodeTotal = json_encode( $totals );
-	}
+	$karyawan = array();
+	$karyawan[] = $jumlah_karyawan_tetap[0]->tetap;
+	$karyawan[] = $jumlah_belum[0]->calon;
 	?>
     new Chartist.Bar('.ct-chart', {
-        labels: <?php echo $encodeKary ?>,
+        labels: ['Karyawan Tetap', 'Karyawan Kontrak'],
         series: [
-			<?php echo $encodeTotal ?>
+			<?php echo json_encode( $karyawan ) ?>
         ]
     }, {
         stackBars: true,
