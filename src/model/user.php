@@ -11,6 +11,8 @@ function login($post){
 		if(count($res)>0){
 			$_SESSION['level'] = $res[0]->level;
 			$_SESSION['name'] = $res[0]->nama_user;
+
+			//contohnya kaya ini. jadi setiap aktivitas admin, dia insert ke log
 			$db = new Database();
 			$q = "INSERT INTO log(aksi) VALUES ('Admin Login')";
 			$db->query($q);
@@ -20,9 +22,12 @@ function login($post){
 }
 function logout(){
 	session_destroy();
+
+	//contohnya kaya ini. jadi setiap aktivitas admin, dia insert ke log
 	$db = new Database();
 	$q = "INSERT INTO log(aksi) VALUES ('Admin Keluar')";
 	$db->query($q);
+
 	header( 'Location: ../login.php');
 }
 if(isset($_GET['f'])) {
