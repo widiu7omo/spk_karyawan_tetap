@@ -54,5 +54,11 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="log-aktivitas.php">
+                <span class="link-title">Log Aktivitas</span>
+                <i class="mdi mdi-history link-icon"></i>
+            </a>
+        </li>
     </ul>
 </div>

@@ -11,12 +11,18 @@ function login($post){
 		if(count($res)>0){
 			$_SESSION['level'] = $res[0]->level;
 			$_SESSION['name'] = $res[0]->nama_user;
+			$db = new Database();
+			$q = "INSERT INTO log(aksi) VALUES ('Admin Login')";
+			$db->query($q);
 			header( 'Location: ../index.php');
 		}
 	}
 }
 function logout(){
 	session_destroy();
+	$db = new Database();
+	$q = "INSERT INTO log(aksi) VALUES ('Admin Keluar')";
+	$db->query($q);
 	header( 'Location: ../login.php');
 }
 if(isset($_GET['f'])) {
