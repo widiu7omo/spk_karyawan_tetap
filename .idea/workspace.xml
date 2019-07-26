@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0886ba46-0ab7-41da-aff0-286e9e2fa7fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data-kriteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/data-kriteria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/kriteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/kriteria.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,11 +75,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/data-kriteria.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1274">
-              <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+            <state relative-caret-position="448">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/karyawan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="77" column="119" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/kriteria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1204">
+              <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -151,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/model/karyawan.php" />
         <option value="$PROJECT_DIR$/src/history-karyawan.php" />
         <option value="$PROJECT_DIR$/src/kriteria-list.php" />
-        <option value="$PROJECT_DIR$/src/model/kriteria.php" />
         <option value="$PROJECT_DIR$/src/model/spk.php" />
         <option value="$PROJECT_DIR$/src/free-user.php" />
         <option value="$PROJECT_DIR$/src/model/database.php" />
@@ -160,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/log-aktivitas.php" />
         <option value="$PROJECT_DIR$/src/model/user.php" />
         <option value="$PROJECT_DIR$/src/model/data-kriteria.php" />
+        <option value="$PROJECT_DIR$/src/model/kriteria.php" />
       </list>
     </option>
   </component>
@@ -256,12 +273,12 @@
       <workItem from="1564014186159" duration="170000" />
       <workItem from="1564044765978" duration="1481000" />
       <workItem from="1564057477837" duration="27000" />
-      <workItem from="1564110020958" duration="64000" />
+      <workItem from="1564110020958" duration="211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73725000" />
+    <option name="totallyTimeSpent" value="73872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="696" extended-state="6" />
@@ -524,24 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/karyawan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="77" column="119" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kriteria-management.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/kriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -601,10 +604,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/karyawan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="77" column="119" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/data-kriteria.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1274">
-          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+        <state relative-caret-position="448">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/kriteria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1204">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
         </state>
       </provider>
     </entry>

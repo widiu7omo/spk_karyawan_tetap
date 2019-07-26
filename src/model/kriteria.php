@@ -20,6 +20,10 @@ function add_kriteria($post){
 		}
 
 	}
+	$db = new Database();
+	$q = "INSERT INTO log(aksi) VALUES ('Admin Menambahkan Data Kriteria')";
+	$db->query($q);
+	header('Location: ../kriteria-list.php');
 
 }
 function edit_kriteria($post){
@@ -27,12 +31,22 @@ function edit_kriteria($post){
 	$q = "UPDATE kriteria SET nama_kriteria='$post[nama]',bobot='$post[bobot]',bobotpecahan='$post[bobotpecahan]' WHERE id = '$post[id]'";
 	if($db->query($q)){
 		header('Location: ../kriteria-list.php');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Meubah Data Kriteria')";
+		$db->query($q);
+		header('Location: ../kriteria-list.php');
 	}
 }
 function delete_kriteria($id){
 	$db = new Database();
 	$q = "DELETE FROM kriteria WHERE id='$id'";
 	if($db->query($q)){
+		header('Location: ../kriteria-list.php');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Menghapus Data Kriteria')";
+		$db->query($q);
 		header('Location: ../kriteria-list.php');
 	}
 }
@@ -45,6 +59,10 @@ function show_kriteria($id = null){
 	if($db->query($q)){
 		return $db->fetch();
 	}
+
+	$db = new Database();
+	$q = "INSERT INTO log(aksi) VALUES ('Admin Menlihat Data Kriteria')";
+	$db->query($q);
 
 }
 if(isset($_GET['f'])){
