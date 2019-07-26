@@ -9,6 +9,10 @@ function show_hasil_akhir(){
 	$q = "SELECT hasil_akhir.*,nama_karyawan FROM hasil_akhir LEFT OUTER JOIN calon_karyawan ON hasil_akhir.karyawan_id = calon_karyawan.id ";
 	if($db->query($q)){
 		return $db->fetch();
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Melihat Hasil Akhir Karyawan')";
+		$db->query($q);
 	}
 }
 function show_hasil_akhir_free_user(){

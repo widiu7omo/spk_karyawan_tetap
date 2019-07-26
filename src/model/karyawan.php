@@ -9,12 +9,24 @@ function add_karyawan($post){
 	$q = "INSERT INTO calon_karyawan(nama_karyawan, umur, ttl) VALUES ('$post[nama]','$post[umur]','$post[ttl]')";
 	if($db->query($q)){
 		header('Location: ../karyawan-list.php?status=calon');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Menambahkan Data Karyawan')";
+		$db->query($q);
+		header('Location: ../karyawan-list.php?status=calon');
 	}
+
 }
 function edit_karyawan($post){
 	$db = new Database();
 	$q = "UPDATE calon_karyawan SET nama_karyawan='$post[nama]',umur='$post[umur]',ttl='$post[ttl]' WHERE id = '$post[id]'";
+	$q = "INSERT INTO log(aksi) VALUES ('Admin Merubah Data Karyawan')";
 	if($db->query($q)){
+		header('Location: ../karyawan-list.php?status=calon');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Merubah Data Karyawan')";
+		$db->query($q);
 		header('Location: ../karyawan-list.php?status=calon');
 	}
 }
@@ -23,6 +35,11 @@ function delete_karyawan($id){
 	$q = "DELETE FROM calon_karyawan WHERE id='$id'";
 	if($db->query($q)){
 		header('Location: ../karyawan-list.php?status=calon');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Menghapus Data Karyawan')";
+		$db->query($q);
+		header('Location: ../karyawan-list.php?status=calon');
 	}
 }
 function show_karyawan_tetap(){
@@ -30,6 +47,10 @@ function show_karyawan_tetap(){
 	$q = "SELECT * FROM karyawan_tetap";
 	if($db->query($q)){
 		return $db->fetch();
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Melihat Data Karyawan Tetap')";
+		$db->query($q);
 	}
 }
 function show_history_karyawan_tetap(){
@@ -37,6 +58,10 @@ function show_history_karyawan_tetap(){
 	$q = "SELECT * FROM history_pemilihan_karyawan";
 	if($db->query($q)){
 		return $db->fetch();
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Melihat History Pemilihan Karyawan')";
+		$db->query($q);
 	}
 }
 function show_karyawan($id = null,$join = [],$where =[]){
