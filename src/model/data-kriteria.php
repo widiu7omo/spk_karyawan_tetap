@@ -9,6 +9,11 @@ function add_data_kriteria($post){
 	$q = "INSERT INTO data_kriteria(kriteria_id, karyawan_id,nilai) VALUES ('$post[kriteria_id]','$post[karyawan_id]','$post[nilai]')";
 	if($db->query($q)){
 		header('Location: ../spk-list.php');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Menambahkan Data Nilai Karyawan')";
+		$db->query($q);
+		header('Location: ../spk-list.php');
 	}
 }
 function edit_data_kriteria($post){
@@ -16,12 +21,22 @@ function edit_data_kriteria($post){
 	$q = "UPDATE data_kriteria SET nilai='$post[nilai]' WHERE kriteria_id='$post[kriteria_id]' AND karyawan_id='$post[karyawan_id]'";
 	if($db->query($q)){
 		header('Location: ../spk-list.php');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Meubah Data Nilai Karyawan')";
+		$db->query($q);
+		header('Location: ../spk-list.php');
 	}
 }
 function delete_data_kriteria($id){
 	$db = new Database();
 	$q = "DELETE FROM data_kriteria WHERE karyawan_id='$id'";
 	if($db->query($q)){
+		header('Location: ../spk-list.php');
+
+		$db = new Database();
+		$q = "INSERT INTO log(aksi) VALUES ('Admin Menghapus Data Nilai Karyawan')";
+		$db->query($q);
 		header('Location: ../spk-list.php');
 	}
 }
